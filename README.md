@@ -19,14 +19,12 @@
 
 - [Giới thiệu](#-giới-thiệu)
 - [Tính năng](#-tính-năng)
-- [Yêu cầu hệ thống](#-yêu-cầu-hệ-thống)
 - [Cài đặt](#-cài-đặt)
 - [Cách sử dụng](#-cách-sử-dụng)
 - [Cách hoạt động](#-cách-hoạt-động)
 - [Gỡ cài đặt](#-gỡ-cài-đặt)
 - [Cảnh báo quan trọng](#️-cảnh-báo-quan-trọng)
 - [Khắc phục sự cố](#-khắc-phục-sự-cố)
-- [Đóng góp](#-đóng-góp)
 - [License](#-license)
 
 ---
@@ -60,19 +58,6 @@ Script sẽ:
 | ⏰ | **Scheduled task** | Đăng ký task SYSTEM chạy hàng tuần (Chủ nhật 03:00) để refresh IP |
 | 🔒 | **Không cần secret** | Không API key, không token, không telemetry |
 | 🧪 | **Non-interactive mode** | Chạy được từ scheduled task, CI, hoặc pipe |
-
----
-
-## 📋 Yêu cầu hệ thống
-
-| Thành phần | Yêu cầu |
-|---|---|
-| **OS** | Windows 10 / 11 (hoặc Windows Server 2016+) |
-| **PowerShell** | 5.1 trở lên (có sẵn trên Windows 10/11) |
-| **Quyền** | Administrator — **chỉ cần** cho `Apply`, `Restore`, `Schedule` |
-| **Kết nối mạng** | HTTPS ra `cloudflare-dns.com` và `dns.google` |
-
-> 💡 Mode `Diagnose` có thể chạy với quyền user thường — hữu ích để test trước.
 
 ---
 
@@ -360,49 +345,11 @@ Get-WinEvent -LogName 'Microsoft-Windows-TaskScheduler/Operational' -MaxEvents 2
 
 ---
 
-## 🤝 Đóng góp
-
-Mọi đóng góp đều được chào đón! Vui lòng:
-
-1. **Fork** repo
-2. Tạo branch: `git checkout -b feature/ten-tinh-nang`
-3. Commit: `git commit -m 'feat: thêm tính năng X'`
-4. Push: `git push origin feature/ten-tinh-nang`
-5. Mở **Pull Request**
-
-### Quy ước commit
-
-Repo dùng [Conventional Commits](https://www.conventionalcommits.org/):
-
-- `feat:` — tính năng mới
-- `fix:` — sửa bug
-- `docs:` — tài liệu
-- `chore:` — việc lặt vặt (gitignore, CI…)
-- `refactor:` — refactor không đổi hành vi
-
-### Chạy PSScriptAnalyzer trước khi PR
-
-```powershell
-Install-Module PSScriptAnalyzer -Scope CurrentUser
-Invoke-ScriptAnalyzer -Path .\SteamAccessFixer.ps1 -Severity Warning,Error
-```
-
----
-
 ## 📜 License
 
 Phát hành theo [MIT License](LICENSE).
 
 Copyright © 2026 [Halcyon1902](https://github.com/halcyon1902).
-
----
-
-## ⭐ Credits
-
-- **DNS-over-HTTPS providers**: [Cloudflare](https://cloudflare-dns.com) · [Google](https://dns.google)
-- **Inspiration**: cộng đồng PowerShell Việt Nam và các issue về Steam connectivity
-
----
 
 <div align="center">
 
